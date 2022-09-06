@@ -5,7 +5,7 @@ pipeline{
             paralel{
                 stage('subjob-1'){
                     steps{
-                        sh 'lscpu'
+                        echo 'lscpu'
                     }
                 }
                 stage('subjob-2'){
