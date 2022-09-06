@@ -2,13 +2,13 @@ Pipeline {
     agent any
     stages {
         stage('git-clone'){
-            paralel{
+            parallel{
                 stage('paralel-1){
                     steps{
                         sh 'lscpu'
                     }
                 }
-                stage('paralel-1a){
+                stage('parallel-1a){
                     steps{
                         sh'free -m'
                     }
@@ -16,15 +16,24 @@ Pipeline {
             }
         }
         stage('systemcheck-stage'){
-            paralel{
-                stage('paralel-2'){
+            parallel{
+                stage('parallel-2'){
                     steps{
                         sh'free -g'
                     }
                 }
-                stage('paralel'-2a){
+                stage('parallel'-2a){
                     steps{
                         sh'lscpu'
+                    }
+                }
+            }
+        }
+        stage('systemanalysis-stage'){
+            parallel{
+                stage('parallel-3'){
+                    steps{
+                        sh 'whoami'
                     }
                 }
             }
