@@ -1,14 +1,14 @@
-pipeline {
+pipeline{
     agent any
-    stages {
-        stage('git-clone'){
+    stages{
+        stage('parallel-level'){
             paralel{
-                stage('paralel-1'){
+                stage('subjob-1'){
                     steps{
                         sh 'lscpu'
                     }
                 }
-                stage('paralel-1a'){
+                stage('subjob-2'){
                     steps {
                         sh'free -m'
                     }
@@ -16,8 +16,6 @@ pipeline {
             }
         }
         stage('systemcheck-stage'){
-            paralel{
-                stage('paralel-2'){
                     steps {
                         sh'free -g'
                     }
