@@ -2,7 +2,7 @@ pipeline{
     agent any
     stages{
         stage('parallel-level'){
-            paralel{
+            parallel{
                 stage('subjob-1'){
                     steps{
                         echo 'lscpu'
