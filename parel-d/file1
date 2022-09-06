@@ -1,6 +1,6 @@
-pipeline{
+pipeline {
     agent any
-    stages{
+    stages {
         stage('git-clone'){
             paralel{
                 stage('paralel-1){
@@ -9,7 +9,7 @@ pipeline{
                     }
                 }
                 stage('paralel-1a){
-                    steps{
+                    steps {
                         sh'free -m'
                     }
                 }
@@ -18,12 +18,12 @@ pipeline{
         stage('systemcheck-stage'){
             paralel{
                 stage('paralel-2'){
-                    steps{
+                    steps {
                         sh'free -g'
                     }
                 }
                 stage('paralel'-2a){
-                    steps{
+                    steps {
                         sh'lscpu'
                     }
                 }
