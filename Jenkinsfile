@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('git-clone'){
             paralel{
-                stage('paralel-1){
+                stage('paralel-1'){
                     steps{
                         sh 'lscpu'
                     }
                 }
-                stage('paralel-1a){
+                stage('paralel-1a'){
                     steps {
                         sh'free -m'
                     }
@@ -22,7 +22,7 @@ pipeline {
                         sh'free -g'
                     }
                 }
-                stage('paralel'-2a){
+                stage('paralel'-2a'){
                     steps {
                         sh'lscpu'
                     }
