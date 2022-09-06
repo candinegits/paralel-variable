@@ -20,4 +20,6 @@ pipeline{
                         sh'free -g'
                     }
                 }
+    }
+}
            
