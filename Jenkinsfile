@@ -20,10 +20,4 @@ pipeline{
                         sh'free -g'
                     }
                 }
-                stage('paralel-2a'){
-                    steps {
-                        sh'lscpu'
-                    }
-                }
-            }
-}
+           
