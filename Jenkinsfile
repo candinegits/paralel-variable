@@ -1,25 +1,42 @@
-pipeline{
+  Pipeline {
     agent any
-    stages{
-        stage('parallel-level'){
+    stages {
+        stage('git-clone'){
             parallel{
-                stage('subjob-1'){
+                stage('paralel-1){
                     steps{
-                        echo 'lscpu'
+                        sh 'lscpu'
                     }
                 }
-                stage('subjob-2'){
-                    steps {
+                stage('parallel-1a){
+                    steps{
                         sh'free -m'
                     }
                 }
             }
         }
         stage('systemcheck-stage'){
-                    steps {
+            parallel{
+                stage('parallel-2'){
+                    steps{
                         sh'free -g'
                     }
                 }
+                stage('parallel'-2a){
+                    steps{
+                        sh'lscpu'
+                    }
+                }
+            }
+        }
+        stage('systemanalysis-stage'){
+            parallel{
+                stage('parallel-3'){
+                    steps{
+                        sh 'whoami'
+                    }
+                }
+            }
+        }
     }
-}
-           
+} 
