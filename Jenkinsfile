@@ -29,7 +29,7 @@
                 stage('parallel'-2a){
                   agent {
                      label{
-                       lablel 'slave1'
+                       lablel 'slave2'
                          steps{
                         sh'lscpu'
                     }
