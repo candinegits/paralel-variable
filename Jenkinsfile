@@ -27,9 +27,11 @@
                     }
                 }
                 stage('parallel-2a'){
-                  agent {
-                     label{
-                       lablel 'slave2'
+                       agent {
+                         label{
+                           lablel 'slave1'
+                          }
+                      }
                          steps{
                         sh'lscpu'
                     }
