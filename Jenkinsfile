@@ -7,7 +7,7 @@
     stages {
         stage('git-clone'){
             parallel{
-                stage('parallel-1){
+                stage('parallel-1'){
                     steps{
                         sh 'lscpu'
                     }
@@ -26,7 +26,7 @@
                         sh'free -g'
                     }
                 }
-                stage('parallel'-2a){
+                stage('parallel-2a'){
                     steps{
                         sh'lscpu'
                     }
