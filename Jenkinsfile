@@ -12,7 +12,7 @@
                         sh 'lscpu'
                     }
                 }
-                stage('parallel-1a){
+                stage('parallel-1a'){
                     steps{
                         sh'free -m'
                     }
