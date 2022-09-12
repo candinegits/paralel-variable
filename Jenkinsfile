@@ -1,5 +1,9 @@
   Pipeline {
-    agent any
+    agent {
+      label{
+        lablel 'slave1'
+      }
+    }
     stages {
         stage('git-clone'){
             parallel{
@@ -23,7 +27,10 @@
                     }
                 }
                 stage('parallel'-2a){
-                    steps{
+                  agent {
+                     label{
+                       lablel 'slave1'
+                         steps{
                         sh'lscpu'
                     }
                 }
