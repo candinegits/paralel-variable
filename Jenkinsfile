@@ -7,12 +7,12 @@
     stages {
         stage('git-clone'){
             parallel{
-                stage('paralel-1){
+                stage('parallel-1'){
                     steps{
                         sh 'lscpu'
                     }
                 }
-                stage('parallel-1a){
+                stage('parallel-1a'){
                     steps{
                         sh'free -m'
                     }
@@ -26,7 +26,7 @@
                         sh'free -g'
                     }
                 }
-                stage('parallel'-2a){
+                stage('parallel-2a'){
                   agent {
                      label{
                        lablel 'slave2'
